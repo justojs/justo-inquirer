@@ -1,6 +1,6 @@
 {
   "name": "justo-inquirer",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Inquirer for Justo.js.",
   "homepage": "http://justojs.org",
   "author": {
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "inquirer": "*",
-    "deasync": "*"
+    "justo-sync": "*"
   },
   "peerDependencies": {},
   "devDependencies": {

@@ -1,6 +1,6 @@
 "use strict";Object.defineProperty(exports, "__esModule", { value: true });var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();
 var _inquirer = require("inquirer");var _inquirer2 = _interopRequireDefault(_inquirer);
-var _deasync = require("deasync");var _deasync2 = _interopRequireDefault(_deasync);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}var 
+var _justoSync = require("justo-sync");var _justoSync2 = _interopRequireDefault(_justoSync);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}var 
 
 
 
@@ -14,23 +14,16 @@ Inquirer = function () {function Inquirer() {_classCallCheck(this, Inquirer);}_c
 
 
     q) {
-      var res;
-
-
-      (0, _deasync2.default)(function (done) {
+      return (0, _justoSync2.default)(function (done) {
         _inquirer2.default.prompt({ 
           type: "confirm", 
           name: q.name, 
           message: q.title || q.name, 
           default: q.default }).
         then(function (answers) {
-          res = answers[q.name];
-          done();});})();
+          done(undefined, answers[q.name]);});});} }, { key: "input", value: function input(
 
 
-
-
-      return res;} }, { key: "input", value: function input(
 
 
 
@@ -40,10 +33,7 @@ Inquirer = function () {function Inquirer() {_classCallCheck(this, Inquirer);}_c
 
 
     q) {
-      var res;
-
-
-      (0, _deasync2.default)(function (done) {
+      return (0, _justoSync2.default)(function (done) {
         _inquirer2.default.prompt([{ 
           type: "input", 
           name: q.name, 
@@ -76,13 +66,9 @@ Inquirer = function () {function Inquirer() {_classCallCheck(this, Inquirer);}_c
             return res;} }]).
 
         then(function (answers) {
-          res = answers[q.name];
-          done();});})();
+          done(undefined, answers[q.name]);});});} }, { key: "password", value: function password(
 
 
-
-
-      return res;} }, { key: "password", value: function password(
 
 
 
@@ -92,10 +78,7 @@ Inquirer = function () {function Inquirer() {_classCallCheck(this, Inquirer);}_c
 
 
     q) {
-      var res;
-
-
-      (0, _deasync2.default)(function (done) {
+      return (0, _justoSync2.default)(function (done) {
         _inquirer2.default.prompt([{ 
           type: "password", 
           name: q.name, 
@@ -128,13 +111,9 @@ Inquirer = function () {function Inquirer() {_classCallCheck(this, Inquirer);}_c
             return res;} }]).
 
         then(function (answers) {
-          res = answers[q.name];
-          done();});})();
+          done(undefined, answers[q.name]);});});} }, { key: "checkbox", value: function checkbox(
 
 
-
-
-      return res;} }, { key: "checkbox", value: function checkbox(
 
 
 
@@ -144,10 +123,7 @@ Inquirer = function () {function Inquirer() {_classCallCheck(this, Inquirer);}_c
 
 
     q) {
-      var res;
-
-
-      (0, _deasync2.default)(function (done) {
+      return (0, _justoSync2.default)(function (done) {
         _inquirer2.default.prompt([{ 
           type: "checkbox", 
           name: q.name, 
@@ -155,13 +131,9 @@ Inquirer = function () {function Inquirer() {_classCallCheck(this, Inquirer);}_c
           choices: q.choices, 
           default: q.default ? q.default instanceof Array ? q.default : [q.default] : q.default }]).
         then(function (answers) {
-          res = answers[q.name];
-          done();});})();
+          done(undefined, answers[q.name]);});});} }, { key: "list", value: function list(
 
 
-
-
-      return res;} }, { key: "list", value: function list(
 
 
 
@@ -171,10 +143,7 @@ Inquirer = function () {function Inquirer() {_classCallCheck(this, Inquirer);}_c
 
 
     q) {
-      var res;
-
-
-      (0, _deasync2.default)(function (done) {
+      return (0, _justoSync2.default)(function (done) {
         _inquirer2.default.prompt([{ 
           type: "list", 
           name: q.name, 
@@ -182,10 +151,4 @@ Inquirer = function () {function Inquirer() {_classCallCheck(this, Inquirer);}_c
           choices: q.choices, 
           default: q.default }]).
         then(function (answers) {
-          res = answers[q.name];
-          done();});})();
-
-
-
-
-      return res;} }]);return Inquirer;}();exports.default = Inquirer;
+          done(undefined, answers[q.name]);});});} }]);return Inquirer;}();exports.default = Inquirer;
