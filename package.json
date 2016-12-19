@@ -1,11 +1,11 @@
 {
   "name": "justo-inquirer",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Inquirer for Justo.js.",
   "homepage": "http://justojs.org",
   "author": {
     "name": "Justo Labs",
-    "email": "justojs@justolabs.com",
+    "email": "hello@justolabs.com",
     "url": "http://justojs.org"
   },
   "contributors": [
@@ -35,14 +35,13 @@
     "inquirer": "*",
     "justo-sync": "*"
   },
-  "peerDependencies": {},
   "devDependencies": {
     "babel-preset-es2015": "*",
     "justo": "*",
     "justo-assert": "*",
     "justo-plugin-babel": "*",
+    "justo-plugin-eslint": "*",
     "justo-plugin-fs": "*",
-    "justo-plugin-jshint": "*",
     "justo-plugin-npm": "*"
   },
   "preferGlobal": false,
